@@ -16,11 +16,11 @@ import java.util.Scanner;
 
 public class GuestService {
 
-    public void init(Scanner scanner) throws CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, IOException {
+    public void init(Scanner scanner) {
         insertGuests(scanner);
     }
 
-    private void insertGuests (Scanner scanner) throws CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, IOException {
+    private void insertGuests(Scanner scanner) {
         boolean system = true;
         List<Guest> guests = new ArrayList<>();
         do {
@@ -34,22 +34,26 @@ public class GuestService {
             guests.add(new Guest(name, age, email));
 
             System.out.println("More any guest? (Y/N)");
-            if ( scanner.next().equalsIgnoreCase("N"))
+            if (scanner.next().equalsIgnoreCase("N"))
                 system = false;
 
         } while (system);
-        guests.forEach(x -> System.out.println(x.getName() + " - " + x.getAge() + " - " +  x.getEmail()));
+        guests.forEach(x -> System.out.println(x.getName() + " - " + x.getAge() + " - " + x.getEmail()));
+
         createCSV(guests);
     }
 
-    private void createCSV(List<Guest> guestList) throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException {
-            Writer writer = Files.newBufferedWriter(Paths.get("guest_list.csv"));
-            StatefulBeanToCsv<Guest> beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
-
-            beanToCsv.write(guestList);
-
-            writer.flush();
-            writer.close();
+        private void createCSV (List<Guest> guests) {
+            Writer writer = null;
+            try {
+                writer = Files.newBufferedWriter(Paths.get("guest_list.csv"));
+                StatefulBeanToCsv<Guest> beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
+                beanToCsv.write(guests);
+                writer.flush();
+                writer.close();
+            } catch (IOException | CsvRequiredFieldEmptyException | CsvDataTypeMismatchException e) {
+                e.printStackTrace();
+        }
     }
 
 
