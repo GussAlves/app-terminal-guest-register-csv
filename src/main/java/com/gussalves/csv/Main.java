@@ -19,18 +19,3 @@ public class Main {
         System.out.println("****** End system ******");
     }
 }
-
-//            List<CsvPessoa> pessoas = new ArrayList<>();
-//            pessoas.add(new CsvPessoa("Joao",35,"joao@dicasdejava.com.br"));
-//            pessoas.add(new CsvPessoa("Maria",23,"maria@dicasdeprogramacao.com.br"));
-//            pessoas.add(new CsvPessoa("Ana",25,"ana@dicasdejava.com.br"));
-//
-//            Writer writer = Files.newBufferedWriter(Paths.get("pessoas.csv"));
-//            StatefulBeanToCsv<CsvPessoa> beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
-//
-//            beanToCsv.write(pessoas);
-//
-//            writer.flush();
-//            writer.close();
-//
-//            System.out.println("****** Sistema iniciado ******");
