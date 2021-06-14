@@ -1,4 +1,4 @@
-"nome","idade","telefone"
-"Joao","35","joao@dicasdejava.com.br"
-"Maria","23","maria@dicasdeprogramacao.com.br"
-"Ana","25","ana@dicasdejava.com.br"
+"email","idade","nome"
+"joao@dicasdejava.com.br","35","Joao"
+"maria@dicasdeprogramacao.com.br","23","Maria"
+"ana@dicasdejava.com.br","25","Ana"
