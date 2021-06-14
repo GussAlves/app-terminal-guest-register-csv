@@ -1,15 +1,14 @@
 package com.gussalves.csv.controller;
 
+import com.gussalves.csv.service.GuestService;
+
 import java.util.Scanner;
 
 public class MainController {
 
-    public MainController() {
-        // class
-    }
-
     public static void init(Scanner scanner) {
 
+        GuestService guestService = new GuestService();
         boolean system = true;
 
         while (system) {
@@ -22,7 +21,7 @@ public class MainController {
 
             switch (action) {
                 case 1:
-
+                    guestService.init(scanner);
                     break;
                 default:
                     system = false;
@@ -30,13 +29,4 @@ public class MainController {
             }
         }
     }
-
-    private void insertUsers(Scanner scanner) {
-        System.out.println("Insert name for guest");
-        String guestName = scanner.next();
-
-
-    }
-
-
 }
