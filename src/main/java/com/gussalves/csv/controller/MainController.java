@@ -1,15 +1,12 @@
 package com.gussalves.csv.controller;
 
 import com.gussalves.csv.service.GuestService;
-import com.opencsv.exceptions.CsvDataTypeMismatchException;
-import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class MainController {
 
-    public static void init(Scanner scanner) throws CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, IOException {
+    public static void init(Scanner scanner) {
 
         GuestService guestService = new GuestService();
         boolean system = true;
