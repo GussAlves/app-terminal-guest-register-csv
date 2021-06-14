@@ -10,13 +10,13 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws IOException, CsvDataTypeMismatchException, CsvRequiredFieldEmptyException {
-        System.out.println("****** Sistema iniciado ******");
+        System.out.println("****** System init ******");
 
         Scanner scanner = new Scanner(System.in);
         MainController.init(scanner);
         scanner.close();
 
-        System.out.println("****** Sistema encerrado ******");
+        System.out.println("****** End system ******");
     }
 }
 

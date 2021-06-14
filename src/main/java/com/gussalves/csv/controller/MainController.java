@@ -13,16 +13,16 @@ public class MainController {
         boolean system = true;
 
         while (system) {
-            System.out.println("****** Bem vindo ao gerador de lista para convidados ******");
-            System.out.println("Qual ação você deseja realizar? ");
-            System.out.println("0 - Sair");
-            System.out.println("1 - Criar lista de convidados");
+            System.out.println("****** Welcome to guest manager ******");
+            System.out.println("What action wish execute? ");
+            System.out.println("0 - Exit");
+            System.out.println("1 - Create list for guests");
 
             int action = scanner.nextInt();
 
             switch (action) {
                 case 1:
-                    System.out.println("Entrou.. ");
+
                     break;
                 default:
                     system = false;
@@ -31,7 +31,10 @@ public class MainController {
         }
     }
 
-    private void controllerView(Scanner scanner) {
+    private void insertUsers(Scanner scanner) {
+        System.out.println("Insert name for guest");
+        String guestName = scanner.next();
+
 
     }
 
